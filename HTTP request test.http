@@ -1,0 +1,99 @@
+
+
+#### Hacemos un GET request 
+
+GET http://127.0.0.1:8000/api/eventparticipants HTTP/1.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### 
+# Hacemos un POST request para crear un eventparticipant
+
+POST http://127.0.0.1:8000/api/eventparticipants HTTP/1.1
+Content-Type: application/json
+
+{
+    "event_id": 1,
+    "participant_id": 2
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+# Hacemos un PUT request para modificar un eventparticipant
+PUT http://127.0.0.1:8000/api/eventparticipants/17
+Content-Type: application/json
+
+{
+    "event_id": 1,
+    "participant_id": 2
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+# Hacemos un DELTE request para eliminar un eventparticipant
+DELETE http://127.0.0.1:8000/api/eventparticipants/17

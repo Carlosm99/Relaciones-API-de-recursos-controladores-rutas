@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\EventController;
-
+use App\Http\Controllers\EventParticipantController;
+use App\Models\EventParticipant;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,4 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('events', EventController::class);
+
+
+Route::get('/eventparticipants', [EventParticipantController::class, 'index']);
+
+Route::post('/eventparticipants', [EventParticipantController::class, 'store']);
+
+Route::put('/eventparticipants/{eventparticipant}', [EventParticipantController::class, 'update']);
+
+Route::delete('/eventparticipants/{eventparticipant}', [EventParticipantController::class, 'destroy']);

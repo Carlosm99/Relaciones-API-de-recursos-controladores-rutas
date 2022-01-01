@@ -18,10 +18,10 @@ class EventController extends Controller
     {
         $eventos = Event::all();
 
-       response()->json(['eventos'=>$eventos], 201,
+        response()->json(['eventos'=>$eventos], 201,
             ["Content-Type"=>"application/json"]);
 
-        return response()-> view('pages/events', compact('eventos'));
+        return response() -> view('pages/events', compact('eventos'));
     }
 
     /**
@@ -33,7 +33,8 @@ class EventController extends Controller
 
     public function create()
     {
-        return view('pages.create');
+         return view('pages.create');
+        
     }
 
     public function store(Request $request)
@@ -47,7 +48,8 @@ class EventController extends Controller
         //     $nuevoEvt->descripcion = $request->input('descripcion'); //"Concurso de programación anual del I.T. Chetumal";
         //     $nuevoEvt->save();
 
-        //     return response()->json(['mensaje'=>'creación de evento exitoso'], 201);
+        //     return response()->json(['evento'=>$nuevoEvt], 201,
+        //     ["Content-Type"=>"application/json"]);
         // }
         // else
         //     return response()->json(['mensaje'=>'Datos en formato incorrecto'], 404);
@@ -63,6 +65,7 @@ class EventController extends Controller
         
         // return response()->json(['mensaje'=>'creación de evento exitoso'], 201);
         return redirect()->route('events.index')->with('success', 'Evento actualizado con éxito');
+      
     }
 
     /**
@@ -123,4 +126,5 @@ class EventController extends Controller
         $ev->delete();
         return redirect('/events')->with('completed', 'Student has been deleted');   
     }
+  
 }
